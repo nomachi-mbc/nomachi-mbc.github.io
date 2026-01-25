@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>野町MBC - 自主練しようぜ！</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSIxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9IiMxYTBhMDAiLz48Y2lyY2xlIGN4PSI1MDAiIGN5PSI1MDAiIHI9IjQwMCIgZmlsbD0idXJsKCNncmFkKSIgb3BhY2l0eT0iMC44Ii8+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRkY4QzAwIiBzdG9wLW9wYWNpdHk9IjAuNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PC9zdmc+');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, white, transparent),
+                radial-gradient(1px 1px at 33% 85%, white, transparent),
+                radial-gradient(1px 1px at 75% 85%, white, transparent);
+            background-size: 200% 200%;
+            animation: twinkle 3s infinite;
+            opacity: 0.4;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .logo-container {
+            width: 90%;
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+        
+        .logo-image {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.8));
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 140, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.6);
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 18px 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #4267B2 0%, #5890FF 100%);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(66, 103, 178, 0.6);
+        }
+        
+        /* セクション共通 */
+        section {
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* マニフェスト */
+        .manifesto {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        .manifesto-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 140, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .manifesto-content p {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            color: #FF8C00;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        /* 3つの約束 */
+        .features {
+            background: radial-gradient(ellipse at center, #0f2027 0%, #000 100%);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 140, 0, 0.05) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 140, 0, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+        }
+        
+        .feature-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FF8C00;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+        
+        .feature-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
+        }
+        
+        /* 活動情報 */
+        .activity {
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+        }
+        
+        .activity-content {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .social-embed {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 140, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-embed h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .qr-code {
+            width: 280px;
+            height: 280px;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        .instagram-handle {
+            color: #FFD700;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .placeholder {
+            text-align: center;
+            color: #888;
+        }
+        
+        /* FAQ */
+        .faq {
+            background: radial-gradient(ellipse at center, #0a192f 0%, #000 100%);
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 140, 0, 0.2);
+        }
+        
+        .faq-question {
+            padding: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FFD700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: rgba(255, 140, 0, 0.1);
+        }
+        
+        .faq-answer {
+            padding: 0 25px 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
+        }
+        
+        /* CTA最終 */
+        .final-cta {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 50%, #FFD700 100%);
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            color: #000;
+            text-shadow: none;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        /* フッター */
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid rgba(255, 140, 0, 0.3);
+        }
+        
+        footer p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="https://i.imgur.com/5czxgbE.png" alt="野町MBC ロゴ" class="logo-image">
+            </div>
+            <h1>自主練しようぜ!</h1>
+            <p class="hero-subtitle">シンプルに、ダチと集まって練習したくね？</p>
+            <div class="cta-buttons">
+                <a href="https://www.instagram.com/nomachi_mbc?igsh=MTV6NzQ3OXJ3ZWFneA==" target="_blank" class="btn btn-secondary">Instagramを見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- マニフェスト -->
+    <section class="manifesto">
+        <div class="container">
+            <h2>🚀 設立の想い</h2>
+            <div class="manifesto-content">
+                <p><span class="highlight">バスケって、もっと自由でいい。</span></p>
+                <p style="margin-top: 30px;">野町MBCにあるのは、子供たちの「やってみたい！」と、それを見守る親の笑顔だけ。</p>
+                <p>親子でシンプルに、バスケを楽しんでみませんか？</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3つの約束 -->
+    <section class="features">
+        <div class="container">
+            <h2>⚡ 3つの約束</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h3 class="feature-title">心理的安全性</h3>
+                    <p class="feature-description">シュートを外しても、パスが繋がらなくても、ここでは誰も責めたりしません。「失敗」は、挑戦した証拠だから。<br><br>ダメ出しよりも、拍手を。子どもたちの「やってみたい！」を信じて、小さな勇気を全力で応援します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h3 class="feature-title">保護者負担も最小限に</h3>
+                    <p class="feature-description">お茶出し、強制参加のイベントは一切なし。<br><br>お願いしたいのは、子どもたちの安全のための「最小限の見守り」だけ。「できる人が、できる時に、できる範囲で」。忙しい時は送迎だけでもOKです。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h3 class="feature-title">頭も鍛える、体も鍛える</h3>
+                    <p class="feature-description">バスケだけでなく、学習会などの併用イベントも不定期開催。<br><br>日曜の夜、宿題が終わっている爽快感を。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 活動情報 -->
+    <section class="activity">
+        <div class="container">
+            <h2>📸 活動情報</h2>
+            <div class="activity-content">
+                <div class="social-embed">
+                    <h3>📸 Instagram</h3>
+                    <div class="qr-code">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UVLjgrPjg7zjg4njgpLjgZPjgZPjgavphY3nva7jgZfjgabjgY/jgaDjgZXjgYQg8J+TsTwvdGV4dD48L3N2Zz4=" alt="Instagram QRコード">
+                    </div>
+                    <p class="instagram-handle">@NOMACHI_MBC</p>
+                    <p style="color: #ddd; margin-top: 15px; text-align: center;">QRコードをスキャンしてフォロー！<br>日々の練習風景やチームの雰囲気を投稿中</p>
+                    <a href="https://www.instagram.com/nomachi_mbc?igsh=MTV6NzQ3OXJ3ZWFneA==" target="_blank" class="btn btn-secondary" style="margin-top: 20px;">Instagramを開く</a>
+                </div>
+                <div class="social-embed">
+                    <h3>📅 練習スケジュール</h3>
+                    <div class="placeholder">
+                        <p>ここにGoogleカレンダー埋め込みコードを配置</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">場所や時間は状況に応じて柔軟に設定しています</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>💬 よくある質問</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q. どんなレベルの子が参加していますか?</div>
+                <div class="faq-answer">A. バスケ経験のある子が中心ですが、基礎的なスキルがあれば参加可能です。詳しくはInstagramのDMでお問い合わせください。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 代表はバスケ経験者ですか？</div>
+                <div class="faq-answer">A. 正直にお伝えすると、選手としての競技経験はありません。だからこそ、子どもたちの「できない」「怖い」という気持ちがよく分かります。<br><br>安全な活動のため、JBA公認の指導者ライセンスと審判ライセンスは取得済みです。技術指導は経験豊富なパパ・ママたちに協力いただいています。<br><br>「上から教える」のではなく、「隣で一緒に考える」。子どもたち一人ひとりに寄り添ったサポートを心がけています。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 他のチームとの掛け持ちはOKですか?</div>
+                <div class="faq-answer">A. OKです。野町MBCは「自主練の延長」なので、他のチームとの掛け持ちも全く問題ありません。<br>選手は月謝制スクール、スポーツ少年団などに所属。他スポーツ(空手、水泳)との併用も大歓迎です。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 保護者の見学は必須ですか?</div>
+                <div class="faq-answer">A. 安全管理のために見守りいただけるとありがたいですが、当番の割り当ては一切ありません。指導者も保護者のため、同じ親の仲間として無理のない範囲でご協力をお願いしております。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 月謝はいくらですか?</div>
+                <div class="faq-answer">A. 詳細はDMでお問い合わせください。リーズナブルな価格設定を心がけています。<br>会場の費用＋諸経費として300円～800円を都度徴収とさせていただいております。別途スポーツ安全保険の加入を推奨いたします。そちらは入会時にご案内とさせていただきます。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q. 参加するにはどうすればいいですか?</div>
+                <div class="faq-answer">A. InstagramのDMからご連絡ください。活動内容や参加条件などをご案内いたします。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最終CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>さあ、一緒に跳ぼう 🏀</h2>
+            <p>新しいバスケの世界へ、ようこそ</p>
+            <div class="cta-buttons">
+                <a href="https://www.instagram.com/nomachi_mbc?igsh=MTV6NzQ3OXJ3ZWFneA==" target="_blank" class="btn btn-primary">Instagramでフォロー</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <p>© 2025 野町MBC - Mini Basketball Club</p>
+            <p style="margin-top: 10px;">自主練しようぜ！</p>
+        </div>
+    </footer>
+</body>
+</html>
