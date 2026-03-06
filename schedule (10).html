@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>野町MBC - 活動スケジュール</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{margin:0;padding:0;font-family:sans-serif}</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+const ScheduleFinalCheck = () => {
+  const [selectedMonth, setSelectedMonth] = useState('march');
+
+  const renderNotices = () => (
+    <div className="flex flex-col gap-3">
+      <div className="bg-blue-50 rounded-lg shadow-lg p-4 border-l-4 border-blue-500">
+        <h2 className="text-xl font-bold text-blue-800 mb-3">🎉 体験会のお知らせ</h2>
+        <div className="bg-white p-3 rounded border border-blue-200">
+          <p className="text-sm text-gray-700 mb-2">体験会にも個人名義で少しずつ参加します。予定があえばぜひ一緒に。</p>
+          <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+            <li>3/7（土）9:00～10:00 千代野ミニバス（千代野小学校）</li>
+            <li>3/21（土）16:30～ 北陽ミニバス（北陽小学校）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="bg-purple-50 rounded-lg shadow-lg p-4 border-l-4 border-purple-500">
+        <h2 className="text-xl font-bold text-purple-800 mb-3">🏕️ 合宿</h2>
+        <div className="bg-white p-3 rounded border border-purple-200">
+          <p className="font-bold text-purple-700 mb-1 text-lg">4/11（土）～4/12（日）合宿</p>
+          <p className="text-sm text-gray-700 mb-2">4世帯参加のため成立とします</p>
+          <p className="text-xs text-gray-600">詳細は決まり次第お知らせします</p>
+        </div>
+      </div>
+
+      <div className="bg-green-50 rounded-lg shadow-lg p-4 border-l-4 border-green-500">
+        <h2 className="text-xl font-bold text-green-800 mb-3">➕ 追加日程</h2>
+        <div className="bg-white p-3 rounded border border-green-200">
+          <p className="font-bold text-green-700 mb-1">3/29（日）鳴和台市民体育館 17:00～</p>
+          <p className="text-sm text-gray-700">団体活動</p>
+        </div>
+      </div>
+
+      <div className="bg-yellow-50 rounded-lg shadow-lg p-4 border-l-4 border-yellow-500">
+        <h2 className="text-xl font-bold text-yellow-800 mb-3">📝 その他連絡事項</h2>
+        <div className="bg-white p-3 rounded border border-yellow-200">
+          <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+            <li>5月・6月の団体活動は現在抽選待ちです（城南市民体育館・富樫体育館）</li>
+            <li>団体活動・研修会は3世帯以上で成立</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderMarch = () => (
+    <div className="flex flex-col gap-3">
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-xl font-bold text-slate-800 mb-2">📅 3月活動カレンダー</h2>
+        <div className="bg-slate-50 p-3 rounded-lg border border-slate-300">
+          <p className="text-center font-bold text-slate-700 mb-3 text-lg">3月</p>
+          <div className="grid grid-cols-7 gap-1 text-sm">
+            {['日','月','火','水','木','金','土'].map(d => <div key={d} className="text-center text-gray-500 font-semibold">{d}</div>)}
+            
+            {[1,2,3,4,5,6].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+            <div className="text-center py-1 bg-pink-100 rounded font-bold text-pink-700">7●</div>
+            
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">8●</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">9●</div>
+            {[10,11].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">12●</div>
+            {[13,14].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+            
+            <div className="text-center py-1 bg-orange-100 rounded font-bold text-orange-700">15●</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">16●</div>
+            {[17,18].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">19●</div>
+            {[20].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+            <div className="text-center py-1 bg-pink-100 rounded font-bold text-pink-700">21●</div>
+            
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">22●</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">23●</div>
+            {[24,25].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">26●</div>
+            {[27,28].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">29●</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">30●</div>
+            {[31].map(d => <div key={d} className="text-center py-1">{d}</div>)}
+          </div>
+        </div>
+        <div className="mt-3 flex gap-4 justify-center text-sm">
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-blue-100 rounded"></span>団体活動</span>
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-green-100 rounded"></span>個人レッスン</span>
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-orange-100 rounded"></span>イベント</span>
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-pink-100 rounded"></span>体験会</span>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-xl font-bold text-slate-800 mb-2">🏀 団体活動スケジュール</h2>
+        <div className="grid grid-cols-3 gap-3">
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-sm font-bold text-slate-700 mb-1">3/8（日）</p>
+            <p className="text-sm font-bold text-slate-700 mb-2">📍 鳴和台市民体育館</p>
+            <div className="space-y-1">
+              <div className="bg-blue-50 p-2 rounded border border-blue-300">
+                <p className="text-xs font-bold text-slate-700">📚 15:30～16:15 研修会</p>
+              </div>
+              <div className="bg-blue-50 p-2 rounded border border-blue-300">
+                <p className="text-xs font-bold text-slate-700">🏊 16:30～17:30 プール</p>
+              </div>
+              <div className="bg-blue-50 p-2 rounded border border-blue-300">
+                <p className="text-xs font-bold text-slate-700">🏀 18:00～19:00 バスケ</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-sm font-bold text-slate-700 mb-1">3/22（日）</p>
+            <p className="text-sm font-bold text-slate-700 mb-2">📍 城南・泉野図書館</p>
+            <div className="space-y-1">
+              <div className="bg-blue-50 p-2 rounded border border-blue-300">
+                <p className="text-xs font-bold text-slate-700">📚 16:30～17:30 研修会</p>
+                <p className="text-xs text-slate-600">（泉野図書館）</p>
+              </div>
+              <div className="bg-blue-50 p-2 rounded border border-blue-300">
+                <p className="text-xs font-bold text-slate-700">🏀 18:00～19:00 バスケ</p>
+                <p className="text-xs text-slate-600">（城南）</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-sm font-bold text-slate-700 mb-1">3/29（日）</p>
+            <p className="text-sm font-bold text-slate-700 mb-2">📍 鳴和台市民体育館</p>
+            <div className="space-y-1">
+              <div className="bg-blue-50 p-2 rounded border border-blue-300">
+                <p className="text-xs font-bold text-slate-700">🏀 17:00～ バスケ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-lg font-bold text-slate-800 mb-2">👥 3月 個人レッスン</h2>
+        <div className="grid grid-cols-4 gap-2">
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 金沢総合体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/9（月）18:00～20:00</p>
+            <p className="text-xs text-gray-600">第一競技場</p>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 富樫教育プラザ</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/12（水）19:30～</p>
+            <p className="text-xs text-gray-600">指導：玉邑</p>
+          </div>
+          
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 城南市民体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/16（月）18:00～20:00</p>
+            <p className="text-xs text-gray-600">指導：玉邑</p>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 富樫教育プラザ</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/19（水）19:30～</p>
+            <p className="text-xs text-gray-600">指導：玉邑</p>
+          </div>
+        </div>
+        <div className="mt-2 grid grid-cols-3 gap-2">
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 金沢総合体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/23（月）18:00～20:00</p>
+            <p className="text-xs text-gray-600">第一競技場</p>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 富樫教育プラザ</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/26（水）19:30～</p>
+            <p className="text-xs text-gray-600">指導：玉邑</p>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 金沢総合体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/30（月）18:00～20:00</p>
+            <p className="text-xs text-gray-600">第一競技場</p>
+          </div>
+        </div>
+      </div>
+        <div className="mt-2 grid grid-cols-3 gap-2">
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 金沢総合体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/23（月）18:00～20:00</p>
+            <p className="text-xs text-gray-600">第一競技場</p>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 富樫教育プラザ</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/26（水）19:30～</p>
+            <p className="text-xs text-gray-600">指導：玉邑</p>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 金沢総合体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">3/30（月）18:00～20:00</p>
+            <p className="text-xs text-gray-600">第一競技場</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-pink-400">
+        <h2 className="text-lg font-bold text-pink-700 mb-2">🎯 体験会・イベント</h2>
+        <div className="grid grid-cols-4 gap-2">
+          <div className="bg-pink-50 p-2 rounded-lg border border-pink-300">
+            <p className="font-bold text-pink-700 text-base text-center mb-1">🏀 3/7（土）体験会</p>
+            <p className="text-xs text-gray-700 text-center mb-1">9:00～10:00</p>
+            <p className="text-xs text-gray-700 text-center">千代野ミニバス</p>
+            <p className="text-xs text-gray-600 text-center">（千代野小学校）</p>
+          </div>
+
+          <div className="bg-orange-50 p-2 rounded-lg border border-orange-300">
+            <p className="font-bold text-orange-700 text-base text-center mb-1">⛷️ 3/7（土）</p>
+            <p className="text-xs text-gray-700 text-center mb-1">13:00頃～</p>
+            <p className="text-xs text-gray-700 text-center">IOXアローザ</p>
+            <p className="text-xs text-gray-600 text-center">（スキー・スノボ）</p>
+          </div>
+          
+          <div className="bg-orange-50 p-2 rounded-lg border border-orange-300">
+            <p className="font-bold text-orange-700 text-base text-center mb-1">⛰️ 3/15（土）</p>
+            <p className="text-xs text-gray-700 text-center">医王山トレッキング</p>
+            <p className="text-xs text-gray-600 text-center mt-1">詳細は別途連絡</p>
+          </div>
+
+          <div className="bg-pink-50 p-2 rounded-lg border border-pink-300">
+            <p className="font-bold text-pink-700 text-base text-center mb-1">🏀 3/21（土）体験会</p>
+            <p className="text-xs text-gray-700 text-center mb-1">16:30～</p>
+            <p className="text-xs text-gray-700 text-center">北陽ミニバス</p>
+            <p className="text-xs text-gray-600 text-center">（北陽小学校）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderApril = () => (
+    <div className="flex flex-col gap-3">
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-xl font-bold text-slate-800 mb-2">📅 4月活動カレンダー</h2>
+        <div className="bg-slate-50 p-3 rounded-lg border border-slate-300">
+          <p className="text-center font-bold text-slate-700 mb-3 text-lg">4月（4/1は水曜日）</p>
+          <div className="grid grid-cols-7 gap-1 text-sm">
+            {['日','月','火','水','木','金','土'].map(d => <div key={d} className="text-center text-gray-500 font-semibold">{d}</div>)}
+            
+            <div className="text-center text-gray-300"></div>
+            <div className="text-center text-gray-300"></div>
+            <div className="text-center text-gray-300"></div>
+            <div className="text-center py-1">1</div>
+            <div className="text-center py-1">2</div>
+            <div className="text-center py-1">3</div>
+            <div className="text-center py-1">4</div>
+            
+            <div className="text-center py-1">5</div>
+            <div className="text-center py-1">6</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">7●</div>
+            <div className="text-center py-1">8</div>
+            <div className="text-center py-1">9</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">10●</div>
+            <div className="text-center py-1 bg-purple-100 rounded font-bold text-purple-700">11🏕</div>
+            
+            <div className="text-center py-1 bg-purple-100 rounded font-bold text-purple-700">12🏕</div>
+            <div className="text-center py-1">13</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">14●</div>
+            <div className="text-center py-1">15</div>
+            <div className="text-center py-1">16</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">17●</div>
+            <div className="text-center py-1">18</div>
+            
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">19●</div>
+            <div className="text-center py-1">20</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">21●</div>
+            <div className="text-center py-1">22</div>
+            <div className="text-center py-1">23</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">24●</div>
+            <div className="text-center py-1">25</div>
+            
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">26●</div>
+            <div className="text-center py-1">27</div>
+            <div className="text-center py-1 bg-green-100 rounded font-bold text-green-700">28●</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">29●</div>
+            <div className="text-center py-1">30</div>
+          </div>
+        </div>
+        <div className="mt-3 flex gap-4 justify-center text-sm">
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-blue-100 rounded"></span>団体活動</span>
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-green-100 rounded"></span>個人レッスン</span>
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-purple-100 rounded"></span>合宿</span>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-purple-400">
+        <h2 className="text-xl font-bold text-purple-700 mb-2">🏕️ 合宿</h2>
+        <div className="bg-purple-50 p-3 rounded-lg border border-purple-300">
+          <p className="font-bold text-purple-700 text-lg text-center mb-2">4/11（土）～4/12（日） 1泊2日合宿</p>
+          <p className="text-sm text-gray-700 text-center">詳細は決まり次第お知らせします</p>
+          <p className="text-xs text-gray-600 text-center mt-2">親子合わせて8名以上で開催</p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-xl font-bold text-slate-800 mb-2">🏀 団体活動</h2>
+        <div className="grid grid-cols-3 gap-3">
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-sm font-bold text-slate-700 mb-1">4/19（日）</p>
+            <p className="text-sm font-bold text-slate-700 mb-2">📍 城南市民体育館</p>
+            <div className="bg-blue-50 p-2 rounded border border-blue-300">
+              <p className="text-sm font-bold text-slate-700">🏀 15:00～17:00 バスケ</p>
+            </div>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-sm font-bold text-slate-700 mb-1">4/26（土）</p>
+            <p className="text-sm font-bold text-slate-700 mb-2">📍 額谷ふれあい体育館</p>
+            <div className="bg-blue-50 p-2 rounded border border-blue-300">
+              <p className="text-sm font-bold text-slate-700">🏀 18:00～ バスケ</p>
+            </div>
+          </div>
+
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-sm font-bold text-slate-700 mb-1">4/29（水）</p>
+            <p className="text-sm font-bold text-slate-700 mb-2">📍 城南市民体育館</p>
+            <div className="bg-blue-50 p-2 rounded border border-blue-300">
+              <p className="text-sm font-bold text-slate-700">🏀 15:00～17:00 バスケ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-lg font-bold text-slate-800 mb-2">👥 4月 個人レッスン</h2>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 城南市民体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">毎週月曜日 18:00～20:00</p>
+            <p className="text-xs text-gray-600">指導：玉邑</p>
+          </div>
+          
+          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
+            <p className="text-xs font-bold text-slate-600 mb-1">📍 市総合体育館</p>
+            <p className="font-bold text-slate-700 text-sm mb-1">毎週木曜日 19:00～20:30</p>
+            <p className="text-xs text-gray-600">指導：玉邑</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderMay = () => (
+    <div className="flex flex-col gap-3">
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-xl font-bold text-slate-800 mb-2">📅 5月活動カレンダー</h2>
+        <div className="bg-slate-50 p-3 rounded-lg border border-slate-300">
+          <p className="text-center font-bold text-slate-700 mb-3 text-lg">5月</p>
+          <div className="grid grid-cols-7 gap-1 text-sm">
+            {['日','月','火','水','木','金','土'].map(d => <div key={d} className="text-center text-gray-500 font-semibold">{d}</div>)}
+            
+            <div className="text-center text-gray-300"></div>
+            <div className="text-center text-gray-300"></div>
+            <div className="text-center text-gray-300"></div>
+            <div className="text-center text-gray-300"></div>
+            <div className="text-center py-1">1</div>
+            <div className="text-center py-1">2</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">3●</div>
+            
+            <div className="text-center py-1">4</div>
+            <div className="text-center py-1">5</div>
+            <div className="text-center py-1">6</div>
+            <div className="text-center py-1">7</div>
+            <div className="text-center py-1">8</div>
+            <div className="text-center py-1">9</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">10●</div>
+            
+            <div className="text-center py-1">11</div>
+            <div className="text-center py-1">12</div>
+            <div className="text-center py-1">13</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">14●</div>
+            <div className="text-center py-1">15</div>
+            <div className="text-center py-1">16</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">17●</div>
+            
+            <div className="text-center py-1">18</div>
+            <div className="text-center py-1">19</div>
+            <div className="text-center py-1">20</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">21●</div>
+            <div className="text-center py-1">22</div>
+            <div className="text-center py-1">23</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">24●</div>
+            
+            <div className="text-center py-1">25</div>
+            <div className="text-center py-1">26</div>
+            <div className="text-center py-1">27</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">28●</div>
+            <div className="text-center py-1">29</div>
+            <div className="text-center py-1">30</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">31●</div>
+          </div>
+        </div>
+        <div className="mt-3 flex gap-4 justify-center text-sm">
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-blue-100 rounded"></span>団体活動（抽選待ち）</span>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-amber-400">
+        <h2 className="text-xl font-bold text-amber-700 mb-2">🎲 団体活動スケジュール（抽選待ち）</h2>
+        <p className="text-sm text-gray-600 mb-3">📍 城南市民体育館 / 競技場 / 半面：団体</p>
+        <div className="grid grid-cols-3 gap-3">
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/3（日）</p>
+            <p className="text-sm text-gray-700">17:00～19:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/10（日）</p>
+            <p className="text-sm text-gray-700">15:00～17:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/14（木）</p>
+            <p className="text-sm text-gray-700">19:00～21:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/17（日）</p>
+            <p className="text-sm text-gray-700">15:00～17:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/21（木）</p>
+            <p className="text-sm text-gray-700">19:00～21:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/24（日）</p>
+            <p className="text-sm text-gray-700">15:00～17:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/28（木）</p>
+            <p className="text-sm text-gray-700">19:00～21:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+
+          <div className="bg-amber-50 p-2 rounded-lg border border-amber-300">
+            <p className="text-sm font-bold text-amber-800 mb-1">5/31（日）</p>
+            <p className="text-sm text-gray-700">15:00～17:00</p>
+            <p className="text-xs text-gray-600 mt-1">抽選待ち</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-300 shadow-lg">
+        <h3 className="text-base font-bold text-yellow-800 mb-2">ℹ️ 抽選について</h3>
+        <p className="text-sm text-gray-700">3/1に抽選申込を行いました。抽選結果が決定次第、確定スケジュールに更新します。</p>
+      </div>
+    </div>
+  );
+
+  const renderJune = () => (
+    <div className="flex flex-col gap-3">
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
+        <h2 className="text-xl font-bold text-slate-800 mb-2">📅 6月活動カレンダー</h2>
+        <div className="bg-slate-50 p-3 rounded-lg border border-slate-300">
+          <p className="text-center font-bold text-slate-700 mb-3 text-lg">6月</p>
+          <div className="grid grid-cols-7 gap-1 text-sm">
+            {['日','月','火','水','木','金','土'].map(d => <div key={d} className="text-center text-gray-500 font-semibold">{d}</div>)}
+            
+            <div className="text-center py-1">1</div>
+            <div className="text-center py-1">2</div>
+            <div className="text-center py-1">3</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">4●</div>
+            <div className="text-center py-1">5</div>
+            <div className="text-center py-1">6</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">7●</div>
+            
+            <div className="text-center py-1">8</div>
+            <div className="text-center py-1">9</div>
+            <div className="text-center py-1">10</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">11●</div>
+            <div className="text-center py-1">12</div>
+            <div className="text-center py-1">13</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">14●</div>
+            
+            <div className="text-center py-1">15</div>
+            <div className="text-center py-1">16</div>
+            <div className="text-center py-1">17</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">18●</div>
+            <div className="text-center py-1">19</div>
+            <div className="text-center py-1">20</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">21●</div>
+            
+            <div className="text-center py-1">22</div>
+            <div className="text-center py-1">23</div>
+            <div className="text-center py-1">24</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">25●</div>
+            <div className="text-center py-1">26</div>
+            <div className="text-center py-1">27</div>
+            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">28●</div>
+            
+            <div className="text-center py-1">29</div>
+            <div className="text-center py-1">30</div>
+          </div>
+        </div>
+        <div className="mt-3 flex gap-4 justify-center text-sm">
+          <span className="flex items-center gap-1"><span className="w-4 h-4 bg-blue-100 rounded"></span>団体活動（抽選待ち）</span>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-amber-400">
+        <h2 className="text-xl font-bold text-amber-700 mb-2">🎲 団体活動スケジュール（抽選待ち）</h2>
+        <p className="text-sm text-gray-600 mb-3">📍 富樫体育館 / 半面：団体</p>
+        
+        <div className="space-y-3">
+          <div className="bg-amber-50 p-3 rounded-lg border border-amber-300">
+            <p className="font-bold text-amber-800 mb-2">第1週目</p>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/7（日）</p>
+                <p className="text-xs text-gray-600">第1希望 / 抽選待ち</p>
+              </div>
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/4（木）</p>
+                <p className="text-xs text-gray-600">第2希望 / 抽選待ち</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 p-3 rounded-lg border border-amber-300">
+            <p className="font-bold text-amber-800 mb-2">第2週目</p>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/14（日）</p>
+                <p className="text-xs text-gray-600">第1希望 / 抽選待ち</p>
+              </div>
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/11（木）</p>
+                <p className="text-xs text-gray-600">第2希望 / 抽選待ち</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 p-3 rounded-lg border border-amber-300">
+            <p className="font-bold text-amber-800 mb-2">第3週目</p>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/21（日）</p>
+                <p className="text-xs text-gray-600">第1希望 / 抽選待ち</p>
+              </div>
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/18（木）</p>
+                <p className="text-xs text-gray-600">第2希望 / 抽選待ち</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 p-3 rounded-lg border border-amber-300">
+            <p className="font-bold text-amber-800 mb-2">第4週目</p>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/28（日）</p>
+                <p className="text-xs text-gray-600">第1希望 / 抽選待ち</p>
+              </div>
+              <div className="bg-white p-2 rounded border border-amber-200">
+                <p className="text-sm font-bold text-amber-700">6/25（木）</p>
+                <p className="text-xs text-gray-600">第2希望 / 抽選待ち</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-300 shadow-lg">
+        <h3 className="text-base font-bold text-yellow-800 mb-2">ℹ️ 抽選について</h3>
+        <p className="text-sm text-gray-700">富樫体育館の抽選申込を行いました。各週で日曜（第1希望）と木曜（第2希望）を申請しています。抽選結果が決定次第、確定スケジュールに更新します。</p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="w-full max-w-[1080px] mx-auto bg-gradient-to-br from-slate-50 to-gray-50 p-5">
+      <div className="text-center mb-4">
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">野町MBC 活動スケジュール</h1>
+        
+        <div className="flex justify-center gap-2 mb-4 flex-wrap">
+          <button onClick={() => setSelectedMonth('march')} className={`px-6 py-2 rounded-lg font-bold transition-all ${selectedMonth === 'march' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100'}`}>3月</button>
+          <button onClick={() => setSelectedMonth('april')} className={`px-6 py-2 rounded-lg font-bold transition-all ${selectedMonth === 'april' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100'}`}>4月</button>
+          <button onClick={() => setSelectedMonth('may')} className={`px-6 py-2 rounded-lg font-bold transition-all ${selectedMonth === 'may' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100'}`}>5月</button>
+          <button onClick={() => setSelectedMonth('june')} className={`px-6 py-2 rounded-lg font-bold transition-all ${selectedMonth === 'june' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100'}`}>6月</button>
+          <button onClick={() => setSelectedMonth('notices')} className={`px-6 py-2 rounded-lg font-bold transition-all ${selectedMonth === 'notices' ? 'bg-red-600 text-white shadow-lg' : 'bg-white text-red-600 hover:bg-red-50 border-2 border-red-600'}`}>⚠️ 連絡事項</button>
+        </div>
+        
+        <p className="text-sm text-slate-600">更新：3/5</p>
+      </div>
+
+      {selectedMonth === 'march' && renderMarch()}
+      {selectedMonth === 'april' && renderApril()}
+      {selectedMonth === 'may' && renderMay()}
+      {selectedMonth === 'june' && renderJune()}
+      {selectedMonth === 'notices' && renderNotices()}
+    </div>
+  );
+};
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<ScheduleFinalCheck />);
+  </script>
+</body>
+</html>
