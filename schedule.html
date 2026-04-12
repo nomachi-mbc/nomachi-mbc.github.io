@@ -18,345 +18,6 @@ const { useState } = React;
 const Schedule = () => {
   const [selectedMonth, setSelectedMonth] = useState('april');
 
-  const renderApril = () => (
-    <div className="flex flex-col gap-3">
-      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
-        <h2 className="text-xl font-bold text-slate-800 mb-2">📅 4月活動カレンダー</h2>
-        <div className="bg-slate-50 p-3 rounded-lg border border-slate-300">
-          <p className="text-center font-bold text-slate-700 mb-3 text-lg">4月</p>
-          <div className="grid grid-cols-7 gap-1 text-sm">
-            <div className="text-center text-gray-500 font-semibold">日</div>
-            <div className="text-center text-gray-500 font-semibold">月</div>
-            <div className="text-center text-gray-500 font-semibold">火</div>
-            <div className="text-center text-gray-500 font-semibold">水</div>
-            <div className="text-center text-gray-500 font-semibold">木</div>
-            <div className="text-center text-gray-500 font-semibold">金</div>
-            <div className="text-center text-gray-500 font-semibold">土</div>
-            
-            <div></div>
-            <div></div>
-            <div></div>
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">1●</div>
-            <div className="text-center py-1">2</div>
-            <div className="text-center py-1">3</div>
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">4●</div>
-            
-            <div className="text-center py-1">5</div>
-            <div className="text-center py-1">6</div>
-            <div className="text-center py-1">7</div>
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">8🏀🏸</div>
-            <div className="text-center py-1">9</div>
-            <div className="text-center py-1">10</div>
-            <div className="text-center py-1 bg-purple-100 rounded font-bold text-purple-700">11🏕</div>
-            
-            <div className="text-center py-1 bg-purple-100 rounded font-bold text-purple-700">12🏕</div>
-            <div className="text-center py-1">13</div>
-            <div className="text-center py-1">14</div>
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">15🏀🏸</div>
-            <div className="text-center py-1">16</div>
-            <div className="text-center py-1">17</div>
-            <div className="text-center py-1">18</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">19●</div>
-            <div className="text-center py-1">20</div>
-            <div className="text-center py-1">21</div>
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">22🏀🏸</div>
-            <div className="text-center py-1">23</div>
-            <div className="text-center py-1">24</div>
-            <div className="text-center py-1">25</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">26●</div>
-            <div className="text-center py-1">27</div>
-            <div className="text-center py-1">28</div>
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">29●</div>
-            <div className="text-center py-1">30</div>
-          </div>
-        </div>
-        <div className="mt-3 flex gap-3 justify-center text-sm flex-wrap">
-          <span className="flex items-center gap-1">
-            <span className="w-4 h-4 bg-blue-100 rounded"></span>団体活動
-          </span>
-          <span className="flex items-center gap-1">
-            <span className="w-4 h-4 bg-purple-100 rounded"></span>合宿
-          </span>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-purple-400">
-        <h2 className="text-xl font-bold text-purple-700 mb-2">🏕️ 合宿</h2>
-        <div className="bg-purple-50 p-3 rounded-lg border border-purple-300">
-          <p className="font-bold text-purple-700 text-lg text-center mb-2">4/11（土）～4/12（日） 1泊2日合宿</p>
-          <p className="text-sm text-gray-700 text-center">4世帯参加のため成立</p>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
-        <h2 className="text-xl font-bold text-slate-800 mb-2">🏀 4月 団体活動</h2>
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/1（水）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 野々市スポーツセンター</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 18:00～19:30</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/4（土）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 西部市民</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 18:00～19:00</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/8（水）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 富樫体育館</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀🏸 19:30～20:30</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/15（水）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 富樫体育館</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀🏸 19:30～20:30</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/19（日）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 城南</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 15:00～17:00</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/22（水）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 富樫体育館</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀🏸 19:30～20:30</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/26（日）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 額谷ふれあい</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 18:00～19:00</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">4/29（水）</p>
-            <p className="text-sm font-bold text-slate-700 mb-2">📍 城南</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 15:00～17:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderMay = () => (
-    <div className="flex flex-col gap-3">
-      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
-        <h2 className="text-xl font-bold text-slate-800 mb-2">📅 5月活動カレンダー</h2>
-        <div className="bg-slate-50 p-3 rounded-lg border border-slate-300">
-          <p className="text-center font-bold text-slate-700 mb-3 text-lg">5月</p>
-          <div className="grid grid-cols-7 gap-1 text-sm">
-            <div className="text-center text-gray-500 font-semibold">日</div>
-            <div className="text-center text-gray-500 font-semibold">月</div>
-            <div className="text-center text-gray-500 font-semibold">火</div>
-            <div className="text-center text-gray-500 font-semibold">水</div>
-            <div className="text-center text-gray-500 font-semibold">木</div>
-            <div className="text-center text-gray-500 font-semibold">金</div>
-            <div className="text-center text-gray-500 font-semibold">土</div>
-            
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div className="text-center py-1">1</div>
-            <div className="text-center py-1">2</div>
-            
-            <div className="text-center py-1">3</div>
-            <div className="text-center py-1">4</div>
-            <div className="text-center py-1">5</div>
-            <div className="text-center py-1">6</div>
-            <div className="text-center py-1">7</div>
-            <div className="text-center py-1">8</div>
-            <div className="text-center py-1">9</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">10●</div>
-            <div className="text-center py-1">11</div>
-            <div className="text-center py-1">12</div>
-            <div className="text-center py-1">13</div>
-            <div className="text-center py-1">14</div>
-            <div className="text-center py-1">15</div>
-            <div className="text-center py-1">16</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">17●</div>
-            <div className="text-center py-1">18</div>
-            <div className="text-center py-1">19</div>
-            <div className="text-center py-1">20</div>
-            <div className="text-center py-1">21</div>
-            <div className="text-center py-1">22</div>
-            <div className="text-center py-1">23</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">24●</div>
-            <div className="text-center py-1">25</div>
-            <div className="text-center py-1">26</div>
-            <div className="text-center py-1">27</div>
-            <div className="text-center py-1">28</div>
-            <div className="text-center py-1">29</div>
-            <div className="text-center py-1">30</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">31●</div>
-          </div>
-        </div>
-        <div className="mt-3 flex gap-3 justify-center text-sm">
-          <span className="flex items-center gap-1">
-            <span className="w-4 h-4 bg-blue-100 rounded"></span>団体活動
-          </span>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
-        <h2 className="text-xl font-bold text-slate-800 mb-2">🏀 5月 団体活動</h2>
-        <p className="text-sm text-gray-600 mb-3">📍 城南市民体育館 / 全て確定</p>
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">5/10（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 15:00～17:00</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">5/17（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 15:00～17:00</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">5/24（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 15:00～17:00</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">5/31（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 15:00～17:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderJune = () => (
-    <div className="flex flex-col gap-3">
-      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
-        <h2 className="text-xl font-bold text-slate-800 mb-2">📅 6月活動カレンダー</h2>
-        <div className="bg-slate-50 p-3 rounded-lg border border-slate-300">
-          <p className="text-center font-bold text-slate-700 mb-3 text-lg">6月</p>
-          <div className="grid grid-cols-7 gap-1 text-sm">
-            <div className="text-center text-gray-500 font-semibold">日</div>
-            <div className="text-center text-gray-500 font-semibold">月</div>
-            <div className="text-center text-gray-500 font-semibold">火</div>
-            <div className="text-center text-gray-500 font-semibold">水</div>
-            <div className="text-center text-gray-500 font-semibold">木</div>
-            <div className="text-center text-gray-500 font-semibold">金</div>
-            <div className="text-center text-gray-500 font-semibold">土</div>
-            
-            <div></div>
-            <div className="text-center py-1">1</div>
-            <div className="text-center py-1">2</div>
-            <div className="text-center py-1">3</div>
-            <div className="text-center py-1">4</div>
-            <div className="text-center py-1">5</div>
-            <div className="text-center py-1">6</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">7●</div>
-            <div className="text-center py-1">8</div>
-            <div className="text-center py-1">9</div>
-            <div className="text-center py-1">10</div>
-            <div className="text-center py-1">11</div>
-            <div className="text-center py-1">12</div>
-            <div className="text-center py-1">13</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">14●</div>
-            <div className="text-center py-1">15</div>
-            <div className="text-center py-1">16</div>
-            <div className="text-center py-1">17</div>
-            <div className="text-center py-1">18</div>
-            <div className="text-center py-1">19</div>
-            <div className="text-center py-1">20</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">21●</div>
-            <div className="text-center py-1">22</div>
-            <div className="text-center py-1">23</div>
-            <div className="text-center py-1">24</div>
-            <div className="text-center py-1">25</div>
-            <div className="text-center py-1">26</div>
-            <div className="text-center py-1">27</div>
-            
-            <div className="text-center py-1 bg-blue-100 rounded font-bold text-blue-700">28●</div>
-            <div className="text-center py-1">29</div>
-            <div className="text-center py-1">30</div>
-          </div>
-        </div>
-        <div className="mt-3 flex gap-3 justify-center text-sm">
-          <span className="flex items-center gap-1">
-            <span className="w-4 h-4 bg-blue-100 rounded"></span>団体活動
-          </span>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-lg p-3 border-l-4 border-slate-400">
-        <h2 className="text-xl font-bold text-slate-800 mb-2">🏀 6月 団体活動</h2>
-        <p className="text-sm text-gray-600 mb-3">📍 富樫体育館 / 全て確定</p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">6/7（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 18:00～20:30</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">6/14（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 18:00～20:30</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">6/21（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 18:00～20:30</p>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-2 rounded-lg border border-slate-300">
-            <p className="text-sm font-bold text-slate-700 mb-1">6/28（日）</p>
-            <div className="bg-blue-50 p-2 rounded">
-              <p className="text-xs font-bold text-slate-700">🏀 18:00～20:30</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="w-full max-w-[1080px] mx-auto bg-gradient-to-br from-slate-50 to-gray-50 p-5">
       <div className="text-center mb-4">
@@ -368,12 +29,110 @@ const Schedule = () => {
           <button onClick={() => setSelectedMonth('june')} className={'px-6 py-2 rounded-lg font-bold transition-all ' + (selectedMonth === 'june' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100')}>6月</button>
         </div>
         
-        <p className="text-sm text-slate-600">更新：3/29</p>
+        <p className="text-sm text-slate-600">更新：4/12</p>
       </div>
 
-      {selectedMonth === 'april' && renderApril()}
-      {selectedMonth === 'may' && renderMay()}
-      {selectedMonth === 'june' && renderJune()}
+      {selectedMonth === 'april' && (
+        <div className="flex flex-col gap-3">
+          <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-purple-400">
+            <h2 className="text-xl font-bold text-purple-700 mb-2">🏕️ 合宿</h2>
+            <div className="bg-purple-50 p-3 rounded-lg">
+              <p className="font-bold text-purple-700 text-lg">4/11（土）～4/12（日） 1泊2日合宿</p>
+              <p className="text-sm text-gray-700">4世帯参加のため成立</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-slate-400">
+            <h2 className="text-xl font-bold text-slate-800 mb-3">🏀 4月 団体活動</h2>
+            <div className="space-y-2">
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/1（水）野々市スポーツセンター 18:00～19:30</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/4（土）西部市民 18:00～19:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/8（水）富樫体育館 19:30～20:30 🏀🏸</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/15（水）富樫体育館 19:30～20:30 🏀🏸</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/19（日）城南 15:00～17:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/22（水）富樫体育館 19:30～20:30 🏀🏸</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/23（木）城西市民 18:00～19:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/26（日）額谷ふれあい 18:00～19:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">4/29（水）城南 15:00～17:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedMonth === 'may' && (
+        <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-slate-400">
+          <h2 className="text-xl font-bold text-slate-800 mb-2">🏀 5月 団体活動</h2>
+          <p className="text-sm text-gray-600 mb-3">📍 城南市民体育館 / 全て確定</p>
+          <div className="space-y-2">
+            <div className="bg-slate-50 p-3 rounded-lg">
+              <p className="font-bold text-slate-700">5/10（日）15:00～17:00</p>
+            </div>
+            <div className="bg-slate-50 p-3 rounded-lg">
+              <p className="font-bold text-slate-700">5/17（日）15:00～17:00</p>
+            </div>
+            <div className="bg-slate-50 p-3 rounded-lg">
+              <p className="font-bold text-slate-700">5/24（日）15:00～17:00</p>
+            </div>
+            <div className="bg-slate-50 p-3 rounded-lg">
+              <p className="font-bold text-slate-700">5/31（日）15:00～17:00</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedMonth === 'june' && (
+        <div className="flex flex-col gap-3">
+          <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-purple-400">
+            <h2 className="text-xl font-bold text-purple-700 mb-2">🏕️ 合宿</h2>
+            <div className="bg-purple-50 p-3 rounded-lg">
+              <p className="font-bold text-purple-700 text-lg">6/6（金）～6/7（土） 1泊2日合宿</p>
+              <p className="text-sm text-gray-700">📍 羽咋</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-slate-400">
+            <h2 className="text-xl font-bold text-slate-800 mb-3">🏀 6月 団体活動</h2>
+            <div className="space-y-2">
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">6/7（日）富樫体育館 18:00～20:30（合宿後）</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">6/13（土）城南市民 17:00～19:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">6/14（日）富樫体育館 18:00～20:30</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">6/21（日）富樫体育館 18:00～20:30</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">6/27（土）城南市民 17:00～19:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">6/28（日）富樫体育館 18:00～20:30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
