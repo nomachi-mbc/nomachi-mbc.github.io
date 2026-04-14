@@ -27,9 +27,10 @@ const Schedule = () => {
           <button onClick={() => setSelectedMonth('april')} className={'px-6 py-2 rounded-lg font-bold transition-all ' + (selectedMonth === 'april' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100')}>4月</button>
           <button onClick={() => setSelectedMonth('may')} className={'px-6 py-2 rounded-lg font-bold transition-all ' + (selectedMonth === 'may' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100')}>5月</button>
           <button onClick={() => setSelectedMonth('june')} className={'px-6 py-2 rounded-lg font-bold transition-all ' + (selectedMonth === 'june' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100')}>6月</button>
+          <button onClick={() => setSelectedMonth('july')} className={'px-6 py-2 rounded-lg font-bold transition-all ' + (selectedMonth === 'july' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100')}>7月</button>
         </div>
         
-        <p className="text-sm text-slate-600">更新：4/12</p>
+        <p className="text-sm text-slate-600">更新：4/14</p>
       </div>
 
       {selectedMonth === 'april' && (
@@ -78,21 +79,41 @@ const Schedule = () => {
       )}
 
       {selectedMonth === 'may' && (
-        <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-slate-400">
-          <h2 className="text-xl font-bold text-slate-800 mb-2">🏀 5月 団体活動</h2>
-          <p className="text-sm text-gray-600 mb-3">📍 城南市民体育館 / 全て確定</p>
-          <div className="space-y-2">
-            <div className="bg-slate-50 p-3 rounded-lg">
-              <p className="font-bold text-slate-700">5/10（日）15:00～17:00</p>
+        <div className="flex flex-col gap-3">
+          <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-slate-400">
+            <h2 className="text-xl font-bold text-slate-800 mb-3">🏀 5月 日曜日（城南市民体育館）</h2>
+            <div className="space-y-2">
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">5/10（日）15:00～17:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">5/17（日）15:00～17:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">5/24（日）15:00～17:00</p>
+              </div>
+              <div className="bg-slate-50 p-3 rounded-lg">
+                <p className="font-bold text-slate-700">5/31（日）15:00～17:00</p>
+              </div>
             </div>
-            <div className="bg-slate-50 p-3 rounded-lg">
-              <p className="font-bold text-slate-700">5/17（日）15:00～17:00</p>
-            </div>
-            <div className="bg-slate-50 p-3 rounded-lg">
-              <p className="font-bold text-slate-700">5/24（日）15:00～17:00</p>
-            </div>
-            <div className="bg-slate-50 p-3 rounded-lg">
-              <p className="font-bold text-slate-700">5/31（日）15:00～17:00</p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-blue-400">
+            <h2 className="text-xl font-bold text-blue-800 mb-3">🏀🏸 5月 水曜日（富樫体育館）</h2>
+            <p className="text-sm text-gray-600 mb-2">バスケ + バドミントン</p>
+            <div className="space-y-2">
+              <div className="bg-blue-50 p-3 rounded-lg">
+                <p className="font-bold text-blue-700">5/6（水）19:30～21:00</p>
+              </div>
+              <div className="bg-blue-50 p-3 rounded-lg">
+                <p className="font-bold text-blue-700">5/13（水）19:30～21:00</p>
+              </div>
+              <div className="bg-blue-50 p-3 rounded-lg">
+                <p className="font-bold text-blue-700">5/20（水）19:30～21:00</p>
+              </div>
+              <div className="bg-blue-50 p-3 rounded-lg">
+                <p className="font-bold text-blue-700">5/27（水）19:30～21:00</p>
+              </div>
             </div>
           </div>
         </div>
@@ -129,6 +150,21 @@ const Schedule = () => {
               <div className="bg-slate-50 p-3 rounded-lg">
                 <p className="font-bold text-slate-700">6/28（日）富樫体育館 18:00～20:30</p>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedMonth === 'july' && (
+        <div className="bg-white rounded-lg shadow-lg p-4 border-l-4 border-slate-400">
+          <h2 className="text-xl font-bold text-slate-800 mb-3">🏀 7月 団体活動</h2>
+          <p className="text-sm text-gray-600 mb-3">📍 富樫体育館</p>
+          <div className="space-y-2">
+            <div className="bg-slate-50 p-3 rounded-lg">
+              <p className="font-bold text-slate-700">7/12（日）18:00～20:30</p>
+            </div>
+            <div className="bg-slate-50 p-3 rounded-lg">
+              <p className="font-bold text-slate-700">7/19（日）18:00～20:30</p>
             </div>
           </div>
         </div>
